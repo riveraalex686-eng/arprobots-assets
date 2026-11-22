@@ -7,14 +7,87 @@
 <style>
 :root{color-scheme:dark;--gold:#e7c879;--gold2:#a47832;--red:#dc172c;--base:#090a0c;--surface:#17191c;--line:#353638;--muted:#b6b7b9}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -10%,#4a341b44,transparent 43%),linear-gradient(150deg,#090909,#131416 56%,#0a0b0e);color:#f5f1ea;font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}header{border-bottom:1px solid #7256287b;background:#090a0bcc;padding:15px max(22px,calc((100vw - 1040px)/2));display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.05em}.mark{width:50px;height:50px;border:1px solid #ae812f;border-radius:14px;display:grid;place-items:center;font:italic 900 36px Georgia,serif;background:linear-gradient(140deg,#fff8d8,#d4a83b 49%,#775020);color:#1b1208;box-shadow:0 5px 15px #000, inset 0 1px #fff7}.brand small{display:block;font-size:9px;letter-spacing:.2em;color:var(--gold)}.header-note{font-size:12px;color:var(--gold);border:1px solid #745c2c;border-radius:30px;padding:8px 13px;white-space:nowrap}main{max-width:1020px;margin:auto;padding:40px 22px 70px}.eyebrow{color:var(--gold);letter-spacing:.2em;text-transform:uppercase;font-size:12px;font-weight:800}h1{font-size:clamp(32px,6vw,57px);line-height:1.08;margin:10px 0 10px;font-weight:900;letter-spacing:-.04em}h1 em{font-family:Georgia,serif;color:var(--gold);font-weight:600}p.sub{color:#b9b7b4;max-width:680px;margin:6px 0 28px}.layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(265px,1fr);gap:20px;align-items:start}.panel,.summary{background:linear-gradient(160deg,#242426d9,#111215f5);border:1px solid #544733;border-radius:20px;box-shadow:0 18px 55px #0007;overflow:hidden}.panel{padding:25px}.summary{padding:23px;position:sticky;top:20px}.step{display:flex;gap:13px;margin:0 0 17px;align-items:center}.num{width:34px;height:34px;border-radius:11px;border:1px solid #d4aa54;display:grid;place-items:center;color:#f4d487;background:#392c1b;font-weight:900}.step h2{font-size:17px;line-height:1.3;margin:0}.hint{color:#c1beb8;font-size:13px;margin:2px 0 16px}.divider{height:1px;background:#3d3e3f;margin:25px 0}.field{width:100%;height:49px;border:1px solid #606067;border-radius:12px;color:#f6f6f7;background:#121417;padding:0 15px;font:inherit;font-size:15px;outline:0}.field:focus{border-color:#ecce81;box-shadow:0 0 0 3px #d6ac4f20}.field::placeholder{color:#909398}label.label{display:block;font-size:13px;color:#e4dfd6;font-weight:750;margin-bottom:7px}.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}.choice{background:#16181b;border:1px solid #515154;border-radius:13px;padding:15px;text-align:left;color:inherit;cursor:pointer;min-height:96px;transition:border .15s,transform .15s}.choice strong{display:block;font-size:14px}.choice span{display:block;color:#bbb8b1;font-size:12px;margin-top:6px}.choice:hover{border-color:#caa454;transform:translateY(-1px)}.choice.selected{border-color:#ebca73;background:linear-gradient(135deg,#463620,#191816);box-shadow:inset 0 0 0 1px #9d7331}.choice:disabled{opacity:.5;cursor:not-allowed}.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.slot{border:1px solid #56565a;border-radius:11px;background:#151719;color:#f5f5f5;padding:13px 5px;cursor:pointer;font-weight:750}.slot:hover,.slot.selected{border-color:var(--gold);background:#44331a}.slot:disabled{opacity:.4}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.check{display:flex;gap:9px;align-items:flex-start;color:#c9c5be;font-size:12px;margin:17px 0}.check input{accent-color:#e6c070;margin-top:3px}.cta{width:100%;border:1px solid #f34a5b;border-radius:14px;color:white;background:linear-gradient(180deg,#f94b60 0%,#dc1028 48%,#85040f 100%);box-shadow:inset 0 2px 1px #ffa6ad88,0 6px 0 #55030c,0 13px 24px #bd122b33;padding:15px;cursor:pointer;font-weight:900;font-size:15px}.cta:hover{filter:brightness(1.1)}.cta:disabled{cursor:not-allowed;filter:grayscale(.8);opacity:.55;box-shadow:none}.sum-title{font-weight:900;font-size:17px;color:var(--gold);margin:0 0 20px}.row{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding:13px 0;border-bottom:1px solid #393b3d}.row span{color:#b7b7b7;font-size:13px}.row b{text-align:right;font-size:13px;max-width:61%}.total{color:var(--gold);font-size:25px;font-weight:900;margin-top:18px;text-align:right}.notice{border-radius:13px;padding:14px;margin:17px 0;line-height:1.45;font-size:13px;background:#26221b;border:1px solid #6a572f;color:#f1dbad}.notice.error{background:#411c20;border-color:#9a3642;color:#ffd3d5}.success{background:#153727;border-color:#398760;color:#d1ffe5}.fine{font-size:11px;color:#a7a4a0;line-height:1.65;margin-top:18px}.invisible{display:none!important}footer{text-align:center;padding:26px 10px;color:#999;border-top:1px solid #30291e;font-size:12px}footer strong{color:#d9bd78}button:focus-visible{outline:3px solid #e7c879;outline-offset:3px}@media(max-width:760px){.layout{grid-template-columns:1fr}.summary{position:static;order:-1}.panel{padding:18px}main{padding:28px 14px 45px}header{padding:12px 16px}.header-note{font-size:10px}.cards{grid-template-columns:1fr 1fr}.slots{grid-template-columns:repeat(3,1fr)}}@media(max-width:420px){.cards,.two{grid-template-columns:1fr}.mark{width:43px;height:43px}.brand{font-size:12px}.header-note{padding:6px 9px}.panel{padding:15px}}
+
+/* Elite 3D visual identity mapped from the approved administrator theme.
+   Customer booking engine and database endpoints remain unchanged. */
+:root{--gold:#ffda7c;--gold2:#ac7e32}
+body{background:#0b0c0e;color:#fff;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.customer-shell{min-height:100vh;display:grid;grid-template-columns:300px minmax(0,1fr)}
+.elite-sidebar{position:relative;min-height:100vh;border-right:1px solid #8f7745;background:linear-gradient(155deg,#28201a 0%,#0d0e10 20%,#08090b 72%,#272019 100%);box-shadow:inset -4px 0 9px #0008,5px 0 13px #0009;display:flex;flex-direction:column}
+.elite-sidebar-logo{height:278px;border-bottom:2px solid #a77e37;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:20px 10px 10px;background:radial-gradient(ellipse at center,#313033 0%,#09090a 73%)}
+.elite-logo-corner{position:absolute;left:-73px;top:-78px;width:165px;height:165px;transform:rotate(45deg);background:linear-gradient(135deg,#fff0b0,#b47b24 63%,#57370f);box-shadow:0 3px 9px #000}
+.elite-sidebar-logo img{width:180px;height:130px;object-fit:contain;z-index:1;filter:drop-shadow(0 4px 12px #000b)}
+.elite-business-brand{text-align:center;display:flex;align-items:center;flex-direction:column;gap:0;line-height:1.2;z-index:1;text-shadow:0 2px 3px #000}
+.elite-business-brand span{font-family:Georgia,serif;font-size:17px;white-space:nowrap;color:#eee}
+.elite-business-brand strong{font-family:Georgia,serif;font-style:italic;letter-spacing:.08em;font-size:32px;color:#f7d17c}
+.elite-business-brand small{font-size:8px;letter-spacing:.31em;margin-top:5px;color:#a8a4a0}
+.sidebar-kicker{font-size:10px;font-weight:850;letter-spacing:.2em;color:#b9ad92;margin:20px 20px 14px}
+.sidebar-tenant{position:relative;background:linear-gradient(160deg,#232529,#101113);margin:0 18px 20px;border:1px solid #64656a;border-radius:17px;box-shadow:inset 0 1px #fff3,0 3px 8px #0009;padding:14px 15px 15px 34px;display:flex;flex-direction:column;gap:4px;font-size:13px;font-weight:800}
+.sidebar-tenant small{font-size:10px;color:#bfc1c3;font-weight:400}
+.green-indicator{position:absolute;left:14px;top:21px;width:8px;height:8px;border-radius:50%;background:#46f22b;box-shadow:0 0 9px #46f22b}
+.sidebar-selected{margin:0 18px;padding:13px 15px;border-radius:13px;background:linear-gradient(#ff3946,#ce071d 49%,#710107);border:1px solid #ff6770;box-shadow:inset 0 2px 1px #ffd1cd7d,0 4px 0 #4c0006,0 8px 13px #000b;color:#fff;font-size:14px;font-weight:850}
+.sidebar-cal-icon{font-size:18px;color:#ffe08a;margin-right:9px}
+.sidebar-hint{padding:20px 22px;color:#bdb6aa;font-size:10px;letter-spacing:.1em;line-height:1.8}
+.sidebar-bottom{margin-top:auto;border-top:1px solid #39312b;padding:20px 17px 16px 35px;position:relative;font-size:10px;color:#ddd;font-weight:750}
+.sidebar-bottom .green-indicator{top:22px}.sidebar-bottom small{display:block;margin-top:5px;font-size:9px;color:#b9a77e;font-weight:400}
+.customer-main{min-width:0;display:flex;flex-direction:column}
+.customer-topbar{height:64px;min-height:64px;border-bottom:1px solid #ae812e;background:linear-gradient(170deg,#191b1f,#090a0b);padding:0 27px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 3px 11px #000b}
+.customer-crumb{display:flex;align-items:center;gap:17px;font-size:13px;color:#e8e6e3}.customer-crumb strong{font-weight:900;font-size:15px;color:#fff}
+.crumb-separator{width:2px;height:24px;background:linear-gradient(#80550e,#ffd773,#80550e)}
+.header-note{font-size:11px;color:#ffd36c;font-weight:900;border-color:#d1a02a;background:#10100d;box-shadow:inset 0 1px 2px #e1bb633b}
+.customer-main main{max-width:1420px;width:100%;padding:20px 26px 42px;flex:1}
+.elite-booking-hero{min-height:180px;display:flex;align-items:center;position:relative;border-bottom:1px solid #b79048;margin-bottom:19px;overflow:hidden;background:#0b0c0d}
+.elite-booking-hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(90deg,#0b0c0d 0%,#0b0c0df0 32%,#0a0b0d44 65%,#0a0b0d0c 100%),url('assets/barber-hero.webp');background-position:center,right center;background-repeat:no-repeat;background-size:cover,auto 100%}
+.hero-copy{position:relative;z-index:1;padding:12px 18px;border-left:5px solid #e9bd64;margin-left:8px}
+.hero-copy .eyebrow{font-size:10px;color:#e9c36c;letter-spacing:.16em}
+.hero-copy h1{font-size:clamp(28px,3.6vw,46px);font-weight:900;margin:8px 0;line-height:1.12;text-shadow:0 3px 3px #000}
+.hero-copy p.sub{font-size:13px;color:#e3deda;line-height:1.4;margin:5px 0 0;max-width:520px}
+.customer-main .notice{border-radius:10px;background:#241c11;border-color:#90713a;color:#f4deb0;box-shadow:inset 0 1px #ffd47524;font-size:12px}
+.customer-main .layout{grid-template-columns:minmax(0,1.67fr) minmax(275px,0.95fr);gap:17px}
+.customer-main .panel,.customer-main .summary{background:linear-gradient(145deg,#45484a 0%,#222427 5%,#141618 35%,#0c0d0e 80%,#242426 100%);border:1px solid #77716a;box-shadow:inset 0 2px 2px #fff4,inset 0 -2px 2px #000a,0 12px 22px #000c;border-radius:19px}
+.customer-main .panel{padding:24px}.customer-main .summary{padding:22px;top:18px}
+.step .num{border:1px solid #bd9140;background:linear-gradient(150deg,#40362b,#151515);color:#ffd98a;box-shadow:inset 0 2px 1px #d6c39855,0 3px 4px #000e;font-weight:900}
+.step h2{font-size:17px;font-weight:900;text-shadow:0 1px 1px #000}
+.customer-main .divider{background:linear-gradient(90deg,#766546,#333 40%,#666 100%);margin:27px 0}
+.choice{border:1px solid #787067;background:linear-gradient(155deg,#464849,#181a1d 36%,#0b0c0e);box-shadow:inset 0 1px 1px #ffffff50,0 4px 7px #000a;border-radius:13px;min-height:101px}
+.choice strong{font-size:14px}.choice.selected{border-color:#e5bf62;background:linear-gradient(145deg,#5a4930,#17191a 55%,#101112);box-shadow:inset 0 2px 1px #ffdd8d50,0 3px 8px #d6ad3d3a}
+.customer-main .field{background:linear-gradient(#282a2d,#111215);border:1px solid #696157;border-radius:9px;box-shadow:inset 0 3px 4px #0009}.customer-main .field:focus{border-color:#f4c961}
+.slot{background:linear-gradient(160deg,#404245,#1b1d1f 45%,#0a0b0c);border:1px solid #615e5a;box-shadow:inset 0 1px 1px #ffffff44,0 4px 5px #0008;border-radius:10px}
+.slot.selected{background:linear-gradient(#66502c,#24190d);border-color:#ffda80;box-shadow:inset 0 2px 1px #ffdd8e66,0 0 10px #e0a83940}
+.cta{min-height:52px;border-radius:16px;background:linear-gradient(180deg,#ff2738 0%,#ce0018 44%,#770007 100%);border:1px solid #fb4757;box-shadow:inset 0 2px 1px #ffbfbb91,inset 0 -2px 1px #4f0003,0 5px 0 #4c0006,0 10px 14px #000c,0 0 10px #f51a3835;font-size:14px;text-shadow:0 2px 2px #0008}
+.summary .sum-title{font-size:19px;font-weight:900;color:#ffd875;border-bottom:1px solid #7e6740;padding-bottom:13px}
+.summary .row{border-bottom-color:#4a4846}.summary .row b{color:#f9f9fa}.summary .total{color:#ffd66a}
+.customer-main footer{background:#0d0e11;border-top:1px solid #5c4a30;font-size:10px}
+@media(max-width:1050px){.customer-shell{grid-template-columns:245px minmax(0,1fr)}.elite-sidebar-logo{height:240px}.elite-sidebar-logo img{width:145px;height:108px}.customer-main .layout{grid-template-columns:1fr}.customer-main .summary{position:static}}
+@media(max-width:800px){.customer-shell{display:block}.elite-sidebar{display:none}.customer-topbar{height:63px;min-height:63px;padding:0 15px}.customer-main main{padding:18px 15px 28px}.elite-booking-hero{min-height:190px}.hero-copy{margin-left:2px}.hero-copy h1{font-size:32px}.customer-main .layout{grid-template-columns:1fr}.customer-main .summary{order:-1;position:static}.customer-crumb strong{font-size:13px}.customer-crumb{font-size:12px}.header-note{font-size:10px}}
+@media(max-width:450px){.hero-copy{padding:12px 8px}.elite-booking-hero{min-height:180px}.elite-booking-hero:before{background-image:linear-gradient(90deg,#0a0b0def,#0a0b0dca 50%,#0a0b0d4b),url('assets/barber-hero.webp')}.customer-main .panel{padding:17px}.customer-main .summary{padding:18px}.customer-main .cards{grid-template-columns:1fr}.customer-main .two{grid-template-columns:1fr}.customer-main .slots{grid-template-columns:repeat(3,1fr)}}
+
 </style>
 </head>
 <body>
-<header><div class="brand"><div class="mark" aria-hidden="true">B</div><div>BARBER &amp; BEAUTY <span style="color:var(--gold)">PRO</span><small>ARPROBOTS · RESERVAS</small></div></div><span class="header-note">PILOTO · PRUEBAS</span></header>
+<div class="customer-shell">
+<aside class="elite-sidebar">
+  <div class="elite-sidebar-logo">
+    <div class="elite-logo-corner"></div>
+    <img src="assets/elite-b-mark.webp" alt="Logo metálico B de Barber & Beauty Pro" width="180" height="130">
+    <div class="elite-business-brand"><span>BARBER &amp; BEAUTY</span><strong>PRO</strong><small>ELITE SALON MANAGEMENT</small></div>
+  </div>
+  <div class="sidebar-kicker">CITAS EN LÍNEA</div>
+  <div class="sidebar-tenant"><span class="green-indicator"></span><span id="sideBusiness">Cargando negocio...</span><small>Reserva sin crear cuenta</small></div>
+  <div class="sidebar-selected"><span class="sidebar-cal-icon">▦</span> Agendar cita</div>
+  <div class="sidebar-hint">SELECCIONA TU SERVICIO, PROFESIONAL Y HORARIO DISPONIBLE.</div>
+  <div class="sidebar-bottom"><span class="green-indicator"></span> SISTEMA DE RESERVAS<br><small>BARBER &amp; BEAUTY PRO · ARPROBOTS</small></div>
+</aside>
+<div class="customer-main">
+<header class="customer-topbar"><div class="customer-crumb"><strong>Barber &amp; Beauty Pro</strong><span class="crumb-separator"></span> Reservar cita</div><span class="header-note">PILOTO · PRUEBAS</span></header>
 <main>
-<div class="eyebrow">Tu próxima cita empieza aquí</div>
+<section class="elite-booking-hero">
+<div class="hero-copy">
+<div class="eyebrow">TU PRÓXIMA CITA EMPIEZA AQUÍ</div>
 <h1 id="brandName">Reserva tu <em>momento</em></h1>
-<p class="sub">Selecciona un servicio, el profesional y la hora que prefieras. No necesitas crear una cuenta.</p><div class="notice" style="margin:0 0 22px">ETAPA DE PRUEBAS: este enlace registra solicitudes de cita pendientes. No compartir con clientes finales hasta cerrar las verificaciones y activar protección contra reservas abusivas.</div>
+<p class="sub">Selecciona un servicio, profesional y horario disponible. Sin registro de cliente.</p>
+</div>
+</section><div class="notice" style="margin:0 0 22px">ETAPA DE PRUEBAS: este enlace registra solicitudes de cita pendientes. No compartir con clientes finales hasta cerrar las verificaciones y activar protección contra reservas abusivas.</div>
 <div class="layout">
 <div class="panel">
 <div class="step"><span class="num">1</span><h2>Escoge el servicio</h2></div>
@@ -50,7 +123,7 @@
 </aside>
 </div>
 </main>
-<footer>Powered by <strong>BARBER &amp; BEAUTY PRO</strong> · ARPRobots LLC · Puerto Rico</footer>
+<footer>Powered by <strong>BARBER &amp; BEAUTY PRO</strong> · ARPRobots LLC · Puerto Rico</footer></div></div>
 <script>
 (function(){
 'use strict';
@@ -77,7 +150,7 @@ function resetSlots(){chosenMinute=null;var box=el('slots');box.replaceChildren(
 async function loadSlots(){chosenMinute=null;summary();var box=el('slots');box.replaceChildren();if(!chosenService||!chosenStaff||!el('date').value){resetSlots();return;}var p=document.createElement('p');p.className='hint';p.textContent='Consultando horarios reales...';box.appendChild(p);var expected=chosenService+'|'+chosenStaff+'|'+el('date').value;try{var data=await api('?api=slots&negocio='+encodeURIComponent(slug)+'&servicio='+encodeURIComponent(chosenService)+'&profesional='+encodeURIComponent(chosenStaff)+'&fecha='+encodeURIComponent(el('date').value));if(expected!==chosenService+'|'+chosenStaff+'|'+el('date').value)return;box.replaceChildren();if(!data.slots.length){p.textContent='No hay horarios disponibles para esa fecha.';box.appendChild(p);return;}data.slots.forEach(function(m){var b=document.createElement('button');b.className='slot';b.type='button';b.textContent=readable(m);b.addEventListener('click',function(){if(confirmed)return;chosenMinute=m;box.querySelectorAll('button').forEach(function(x){x.classList.remove('selected');});b.classList.add('selected');summary();unsetMessage();});box.appendChild(b);});}catch(e){box.replaceChildren();p.textContent=e.message;box.appendChild(p);}}
 el('date').addEventListener('change',function(){if(!confirmed)loadSlots();});
 el('bookForm').addEventListener('submit',async function(e){e.preventDefault();if(waiting||confirmed)return;if(!chosenService||!chosenStaff||chosenMinute===null||!el('date').value){setMessage('Selecciona servicio, profesional, fecha y horario.',true);return;}if(!el('consent').checked){setMessage('Debes autorizar el uso de tus datos para la reserva.',true);return;}waiting=true;el('bookButton').disabled=true;el('bookButton').textContent='PROCESANDO...';unsetMessage();try{var data=await api('?api=book',{method:'POST',body:JSON.stringify({negocio:slug,servicio:chosenService,profesional:chosenStaff,fecha:el('date').value,minuto:chosenMinute,nombre:el('clientName').value,telefono:el('phone').value})});confirmed=true;el('bookButton').textContent='SOLICITUD REGISTRADA';el('bookButton').disabled=true;setMessage('Solicitud registrada correctamente. Referencia: '+data.referencia+'. Estado: pendiente de confirmación por '+catalog.business.name+'.',false,true);}catch(err){setMessage(err.message,true);el('bookButton').disabled=false;el('bookButton').textContent='SOLICITAR MI CITA';loadSlots();}finally{waiting=false;}});
-async function init(){var d=localToday();el('date').min=d;el('date').max=daysAfter(d,21);var firstDate=daysAfter(d,1);if(new Date(firstDate+'T12:00:00Z').getUTCDay()===0)firstDate=daysAfter(firstDate,1);el('date').value=firstDate;if(!/^[a-z0-9][a-z0-9-]{2,47}$/.test(slug)){setMessage('Falta el identificador del negocio en el enlace.',true);return;}try{catalog=await api('?api=catalogo&negocio='+encodeURIComponent(slug));el('brandName').textContent=catalog.business.name;el('sumBusiness').textContent=catalog.business.name;document.title='Reserva en '+catalog.business.name+' · Barber & Beauty Pro';renderServices();renderStaff();resetSlots();summary();}catch(e){el('services').textContent='No es posible mostrar los servicios.';setMessage(e.message,true);}}
+async function init(){var d=localToday();el('date').min=d;el('date').max=daysAfter(d,21);var firstDate=daysAfter(d,1);if(new Date(firstDate+'T12:00:00Z').getUTCDay()===0)firstDate=daysAfter(firstDate,1);el('date').value=firstDate;if(!/^[a-z0-9][a-z0-9-]{2,47}$/.test(slug)){setMessage('Falta el identificador del negocio en el enlace.',true);return;}try{catalog=await api('?api=catalogo&negocio='+encodeURIComponent(slug));el('brandName').textContent=catalog.business.name;el('sideBusiness').textContent=catalog.business.name;el('sumBusiness').textContent=catalog.business.name;document.title='Reserva en '+catalog.business.name+' · Barber & Beauty Pro';renderServices();renderStaff();resetSlots();summary();}catch(e){el('services').textContent='No es posible mostrar los servicios.';setMessage(e.message,true);}}
 init();
 })();
 </script>
