@@ -806,10 +806,18 @@ function businessGate(items=[],message=''){
  $('#bbproLogout').addEventListener('click',async()=>{await DB.auth.signOut();businessId=null;loggedUser=null;authGate()});
  $('#bbproBusiness').addEventListener('submit',async e=>{e.preventDefault();const f=new FormData(e.target);try{const r=await DB.rpc('bb_create_business',{p_name:String(f.get('name')),p_slug:String(f.get('slug'))});businessId=apiErr(r);await cloudLoad();closeModal();}catch(err){businessGate(items,err.message)}});
 }
+async function visibleBusinesses(){
+ const platformResult=await DB.rpc('bb_is_platform_admin');const isPlatformAdmin=apiErr(platformResult);
+ if(isPlatformAdmin){
+  const businesses=apiErr(await DB.from('bb_businesses').select('id,name,slug').order('name'));
+  return businesses.map(b=>({business_id:b.id,role:'platform_admin',active:true,bb_businesses:{name:b.name,slug:b.slug}}));
+ }
+ return apiErr(await DB.from('bb_memberships').select('business_id,role,active,bb_businesses(name,slug)').eq('user_id',loggedUser.id).eq('active',true));
+}
 async function cloudReady(){
  const {data:auth,error:authError}=await DB.auth.getUser();if(authError||!auth.user){authGate();return;}
  loggedUser=auth.user;
- const r=await DB.from('bb_memberships').select('business_id,role,active,bb_businesses(name)').eq('user_id',loggedUser.id).eq('active',true);const members=apiErr(r);
+ const members=await visibleBusinesses();
  if(members.length===1){businessId=members[0].business_id;await cloudLoad();closeModal();}
  else businessGate(members);
 }
@@ -817,7 +825,7 @@ async function bootCloud(){
  if(location.protocol==='file:'){showGate('Abre esta versión con servidor local','<p>Para iniciar sesión en Supabase Auth, abre <code>iniciar_mac.command</code> desde la carpeta principal o utiliza un servidor HTTP local. No abras <code>conectado.html</code> con <code>file://</code>.</p><p>La demostración original sigue disponible en <a href="index.html">index.html</a>.</p>');return;}
  if(!DB){showGate('Configuración pendiente','<p>Para activar la versión conectada, configura <code>cloud/config.js</code> con la URL y clave pública del proyecto exclusivo de Barber & Beauty Pro. La demo exacta permanece disponible en <a href="index.html">index.html</a>.</p>');return;}
  try{await cloudReady();}catch(err){authGate(err.message||'No se pudo iniciar sesión');}
- const avatar=document.querySelector('.avatar'); if(avatar){avatar.setAttribute('role','button');avatar.setAttribute('tabindex','0');const pickBusiness=async()=>{if(!DB||!loggedUser)return;const r=await DB.from('bb_memberships').select('business_id,role,active,bb_businesses(name)').eq('user_id',loggedUser.id).eq('active',true);businessGate(apiErr(r));};avatar.addEventListener('click',pickBusiness);avatar.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pickBusiness();}});}
+ const avatar=document.querySelector('.avatar'); if(avatar){avatar.setAttribute('role','button');avatar.setAttribute('tabindex','0');const pickBusiness=async()=>{if(!DB||!loggedUser)return;businessGate(await visibleBusinesses());};avatar.addEventListener('click',pickBusiness);avatar.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pickBusiness();}});}
 }
 })();
 
