@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0d10">
+<meta name="description" content="Registra tu barbería o salón, crea tu cuenta y comparte tu enlace de reservas en Barber & Beauty Pro.">
+<title>Registro de negocios · Barber & Beauty Pro</title>
+<style>
+:root{color-scheme:dark;--gold:#f9d47d;--gold-deep:#976a24;--red:#e00021;--surface:#17191c;--muted:#b2b4b8;--line:#505055;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:#080a0c;color:#fafafa;min-height:100vh}
+button,input{font:inherit}
+button{cursor:pointer}
+a{color:var(--gold)}
+.shell{display:grid;grid-template-columns:286px minmax(0,1fr);min-height:100vh}
+.sidebar{background:linear-gradient(145deg,#1b1d1f,#090a0c 49%,#21180b);border-right:1px solid #806636;display:flex;flex-direction:column;box-shadow:5px 0 22px #000a}
+.logo-panel{text-align:center;min-height:292px;padding:34px 20px 18px;border-bottom:2px solid #9e7b39;position:relative;overflow:hidden;background:radial-gradient(ellipse at 70% 50%,#3d3e43,#090a0b 67%)}
+.corner{position:absolute;left:-62px;top:-76px;transform:rotate(45deg);height:164px;width:164px;background:linear-gradient(145deg,#fff0ae,#b88130,#53370d)}
+.logo-panel img{position:relative;max-width:184px;width:80%;height:143px;object-fit:contain;filter:drop-shadow(0 5px 10px #000)}
+.logo-panel .logo-name{font-family:Georgia,serif;font-size:16px;line-height:1.22;margin:-4px 0 0}
+.logo-panel .logo-name strong{display:block;color:var(--gold);font-size:29px;font-style:italic}
+.logo-panel small{display:block;color:#9fa0a2;font-size:8px;letter-spacing:.25em;margin-top:6px}
+.sidebar-title{color:#dbc38d;font-size:11px;letter-spacing:.18em;font-weight:900;padding:24px 20px 14px}
+.stepnav{display:flex;align-items:center;gap:13px;padding:15px 17px;border:1px solid #414345;background:linear-gradient(#24272a,#0c0e10);border-radius:12px;margin:0 16px 12px;color:#e3e3e3;font-size:13px;font-weight:800}
+.stepnav .stepnum{display:grid;place-items:center;height:29px;width:29px;border:1px solid #a7803f;border-radius:9px;color:var(--gold)}
+.stepnav.active{background:linear-gradient(180deg,#ff2736,#c9031d 55%,#71000a);color:#fff;border-color:#ff6477;box-shadow:inset 0 1px #fff6,0 5px 7px #000b}
+.stepnav.active .stepnum{background:#45100c;border-color:#f5c063;color:#ffde90}
+.stepnav.done{border-color:#548f56}
+.sidebar-note{color:#aaa;font-size:11px;padding:20px;line-height:1.8}
+.sidebar-footer{margin-top:auto;border-top:1px solid #3e3429;color:#aaa;padding:17px 20px;font-size:10px;line-height:1.8}
+.dot{display:inline-block;background:#44ec45;width:7px;height:7px;border-radius:50%;box-shadow:0 0 7px #2de72d;margin-right:8px}
+.main{min-width:0}
+.topbar{height:64px;display:flex;align-items:center;justify-content:space-between;gap:15px;padding:0 30px;border-bottom:1px solid #bc9140;background:linear-gradient(#1a1d20,#090b0d);font-size:13px}
+.topbar strong{font-size:15px;font-weight:950}
+.topbar .separator{height:24px;border-left:2px solid #b38c3c;margin:0 13px}
+.topbar span{color:#cacaca}
+.topbar .pilot{border:1px solid #d3a72d;color:#ffd579;border-radius:20px;font-size:10px;font-weight:850;padding:8px 13px}
+.container{max-width:1120px;margin:0 auto;padding:24px 25px 60px}
+.hero{min-height:188px;display:flex;align-items:center;background:linear-gradient(90deg,#090a0be7 0%,#090a0bd8 32%,#090a0b0d 100%),url('../barber-beauty-pro/booking/assets/barber-hero.webp') right center/auto 100% no-repeat;border-bottom:1px solid #9b7735;margin-bottom:22px}
+.hero-copy{border-left:5px solid var(--gold);padding-left:19px;margin-left:7px;max-width:650px}
+.eyebrow{color:#f0cb7d;font-size:11px;letter-spacing:.16em;font-weight:850;text-transform:uppercase}
+h1{font-size:clamp(30px,4.3vw,48px);line-height:1.09;letter-spacing:-.035em;margin:9px 0 12px;font-weight:950}
+h1 em{font:italic bold 1em Georgia,serif;color:var(--gold)}
+.hero p{font-size:13px;color:#dedede;margin:0}
+.content-row{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,0.8fr);gap:19px;align-items:start}
+.panel,.help-panel{border-radius:18px;background:linear-gradient(145deg,#3b3d3f 0%,#1c1e21 6%,#101214 52%,#212326 100%);border:1px solid #75716b;box-shadow:inset 0 2px 1px #fff4,0 14px 30px #000b;padding:25px;min-width:0}
+.help-panel{position:sticky;top:20px}
+h2{margin:0 0 8px;font-size:20px}
+p{line-height:1.55}
+.muted{color:#adb0b5}
+.description{font-size:13px;color:#c1c1c1;margin:0 0 19px}
+label{display:block;margin:0 0 15px;font-size:12px;color:#eee;font-weight:750}
+.input{display:block;width:100%;background:linear-gradient(#26292c,#101215);border:1px solid #69696d;box-shadow:inset 0 2px 5px #0009;color:#fff;outline:0;height:48px;padding:0 13px;border-radius:10px;margin-top:7px;font-size:15px}
+.input:focus{border-color:var(--gold);box-shadow:0 0 0 3px #c397392d}
+.input::placeholder{color:#8a8c90}
+.row{display:flex;gap:12px}.row>*{flex:1;min-width:0}
+.buttons{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.btn{padding:12px 19px;min-height:46px;border-radius:13px;font-size:13px;font-weight:900;border:1px solid #777;background:linear-gradient(#3b3e41,#101215 72%);color:#fff;box-shadow:inset 0 1px #fff5,0 3px 6px #0007;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;text-align:center}
+.btn-red{background:linear-gradient(#ff3647,#d40a22 56%,#7b000d);border-color:#ff6672;box-shadow:inset 0 2px #ffd3ca66,0 4px 0 #54010b,0 8px 14px #0008}
+.btn-gold{background:linear-gradient(#f7d789,#b58b39 58%,#574018);border-color:#ffedaa;color:#251700;box-shadow:inset 0 2px #fff9,0 4px 0 #62430f,0 8px 10px #0007}
+.btn:hover{filter:brightness(1.12)}
+.btn:focus-visible{outline:3px solid #f1d179;outline-offset:3px}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.panel hr{border:0;border-top:1px solid #4a4846;margin:22px 0}
+.notice{padding:13px 15px;border:1px solid #997736;border-radius:11px;background:#332a1c;color:#ffe3ae;font-size:13px;margin:0 0 18px}
+.notice.error{border-color:#9d3b45;background:#3e1920;color:#ffe5e6}
+.notice.success{border-color:#447d5a;background:#173827;color:#d8ffe6}
+.notice[hidden],section[hidden]{display:none!important}
+.small{font-size:12px;line-height:1.6}
+.help-title{font-size:16px;font-weight:950;color:var(--gold);margin-bottom:15px}
+.help-item{display:flex;gap:12px;align-items:flex-start;border-bottom:1px solid #454444;padding:13px 0;font-size:12px}
+.help-item b{color:#ffd980;display:grid;place-items:center;border:1px solid #977538;border-radius:9px;min-width:27px;height:27px}
+.help-item strong{font-size:13px}
+.help-item span{display:block;color:#bdbdbd;margin-top:4px}
+.summary-box{border:1px solid #726244;border-radius:14px;background:linear-gradient(140deg,#27231c,#111315);padding:18px;margin:15px 0}
+.summary-box .url{display:block;overflow-wrap:anywhere;color:#ffe3a2;font-size:13px;font-weight:700;padding:11px 0}
+.list{display:grid;gap:10px}
+.listitem{display:flex;gap:12px;justify-content:space-between;align-items:center;border:1px solid #58534b;background:#17191c;border-radius:12px;padding:13px 15px}
+.listitem .name{font-size:14px;font-weight:850}
+.listitem .slug{font-size:11px;color:#b9bbbe}
+.listitem button{white-space:nowrap}
+.kicker{font-size:10px;letter-spacing:.17em;color:#caa557;text-transform:uppercase}
+.privacy{margin-top:20px;font-size:11px;color:#afb0b3;line-height:1.6}
+.status{color:#aac8af;font-size:12px;margin:8px 0}
+footer{color:#98999b;text-align:center;font-size:11px;padding:20px;border-top:1px solid #54462d}
+footer strong{color:var(--gold)}
+@media(max-width:970px){.shell{grid-template-columns:225px minmax(0,1fr)}.logo-panel{min-height:245px}.logo-panel img{height:120px}.content-row{grid-template-columns:1fr}.help-panel{position:static}.container{padding:20px 18px 45px}}
+@media(max-width:700px){.shell{display:block}.sidebar{display:none}.topbar{padding:0 16px}.container{padding:17px 14px 38px}.hero{min-height:170px;background-image:linear-gradient(90deg,#090a0bf1,#090a0b95),url('../barber-beauty-pro/booking/assets/barber-hero.webp')}.hero-copy{margin-left:0;padding-left:13px}.panel,.help-panel{padding:19px}.row{flex-direction:column;gap:0}.buttons .btn{flex:1}.topbar .pilot{font-size:9px;padding:7px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="sidebar">
+  <div class="logo-panel"><div class="corner"></div><img src="../barber-beauty-pro/booking/assets/elite-b-mark.webp" alt="Logo Elite 3D Barber & Beauty Pro"><div class="logo-name">BARBER &amp; BEAUTY <strong>PRO</strong></div><small>ELITE SALON MANAGEMENT</small></div>
+  <div class="sidebar-title">REGISTRO DE NEGOCIOS</div>
+  <div class="stepnav active" id="step1"><span class="stepnum">1</span> Crear cuenta</div>
+  <div class="stepnav" id="step2"><span class="stepnum">2</span> Registrar negocio</div>
+  <div class="stepnav" id="step3"><span class="stepnum">3</span> Compartir enlace</div>
+  <div class="sidebar-note">Cada barbería o salón tiene sus propios empleados, clientes, servicios y calendario.</div>
+  <div class="sidebar-footer"><span class="dot"></span> CONECTADO A SUPABASE<br>ARPROBOTS LLC · PUERTO RICO</div>
+</aside>
+<div class="main">
+<header class="topbar"><div><strong>Barber &amp; Beauty Pro</strong><span class="separator"></span><span>Alta de negocios</span></div><div class="pilot">REGISTRO GUIADO</div></header>
+<div class="container">
+<div class="hero"><div class="hero-copy"><div class="eyebrow">ARPROBOTS · SISTEMA DE CITAS</div><h1>Tu negocio, <em>tus reservas</em></h1><p>Regístrate y recibe un enlace exclusivo para tus clientes.</p></div></div>
+<div class="content-row">
+<div class="panel">
+<div id="notice" class="notice" hidden role="status" aria-live="polite"></div>
+<section id="loadingSection"><h2>Verificando acceso...</h2><p class="description">Comprobando la sesión con Supabase.</p></section>
+<section id="accountSection" hidden>
+<div class="kicker">Paso 1 de 3</div><h2>Crear cuenta de propietario</h2><p class="description">Usa un correo al que tengas acceso. Debes confirmar el email antes de administrar tu negocio.</p>
+<form id="signupForm">
+<label>Correo electrónico<input class="input" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="correo@ejemplo.com"></label>
+<label>Contraseña (mínimo 8 caracteres)<input class="input" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="128" required placeholder="Crea una contraseña segura"></label>
+<div class="buttons"><button class="btn btn-red" id="signupButton" type="submit">Crear cuenta</button><button class="btn" type="button" id="showLogin">Ya tengo una cuenta</button></div>
+</form>
+</section>
+<section id="loginSection" hidden>
+<div class="kicker">Paso 1 de 3</div><h2>Entrar como propietario</h2><p class="description">Si tienes una cuenta de Barber &amp; Beauty Pro, entra para crear otro negocio o consultar tus enlaces.</p>
+<form id="loginForm">
+<label>Correo electrónico<input class="input" type="email" name="email" autocomplete="email" required></label>
+<label>Contraseña<input class="input" type="password" name="password" autocomplete="current-password" required></label>
+<div class="buttons"><button class="btn btn-red" type="submit" id="loginButton">Entrar</button><button class="btn" type="button" id="showSignup">Crear otra cuenta</button></div>
+</form>
+</section>
+<section id="confirmSection" hidden>
+<div class="kicker">Verificación de cuenta</div><h2>Revisa tu correo</h2>
+<p class="description">Enviamos una solicitud de confirmación. Abre el enlace desde cualquier dispositivo. Cuando vuelvas, si la sesión no se inicia automáticamente, utiliza <b>Ya tengo una cuenta</b>.</p>
+<div class="buttons"><button class="btn btn-gold" id="checkConfirmation" type="button">Ya confirmé mi correo</button><button class="btn" type="button" id="confirmToLogin">Entrar con mi cuenta</button></div>
+<p class="privacy">Si no recibes el correo, verifica Spam. El envío inicial de Supabase puede estar limitado hasta configurar SMTP propio.</p>
+</section>
+<section id="businessSection" hidden>
+<div class="kicker">Paso 2 de 3</div><h2>Registra tu negocio</h2><p class="description">El nombre será visible a tus clientes. El identificador crea automáticamente el enlace exclusivo de citas.</p>
+<div id="myBusinesses" class="list" hidden></div>
+<hr>
+<form id="businessForm">
+<label>Nombre comercial<input class="input" type="text" name="name" id="businessName" minlength="2" maxlength="120" required placeholder="Ej. Karlitos Barber Shop" autocomplete="organization"></label>
+<label>Identificador del enlace (letras, números o guiones)<input class="input" type="text" name="slug" id="businessSlug" pattern="[a-z0-9][a-z0-9-]{2,47}" minlength="3" maxlength="48" required placeholder="ej-karlitos-barber-shop" autocapitalize="off" spellcheck="false"></label>
+<p class="description" id="urlPreview">Tu enlace aparecerá aquí.</p>
+<div class="buttons"><button type="submit" class="btn btn-red" id="businessButton">Crear negocio y enlace</button><button class="btn" id="signOut" type="button">Salir</button></div>
+</form>
+</section>
+<section id="readySection" hidden>
+<div class="kicker">Paso 3 de 3</div><h2>Tu enlace está creado</h2>
+<p class="description" id="readyBusinessName"></p>
+<div class="summary-box"><div class="kicker">Enlace público de reservas</div><a class="url" id="bookingUrl" rel="noopener noreferrer" target="_blank"></a><div class="buttons"><button class="btn btn-gold" id="copyUrl" type="button">Copiar enlace</button><a id="openBooking" class="btn" target="_blank" rel="noopener noreferrer">Abrir reservas</a></div></div>
+<p class="description">Tu enlace ya existe. Las citas solo se podrán solicitar cuando configures al menos un profesional activo, sus horarios y un servicio asignado en el panel.</p>
+<div class="buttons"><a class="btn btn-red" id="goDashboard" href="../">Ir al panel Elite 3D</a><button class="btn" type="button" id="anotherBusiness">Gestionar negocios</button></div>
+</section>
+</div>
+<aside class="help-panel">
+<div class="help-title">ASÍ FUNCIONA</div>
+<div class="help-item"><b>1</b><div><strong>Cuenta</strong><span>Correo y contraseña, con confirmación de email.</span></div></div>
+<div class="help-item"><b>2</b><div><strong>Negocio</strong><span>Nombre y enlace único; los datos quedan aislados por propietario.</span></div></div>
+<div class="help-item"><b>3</b><div><strong>Publicar</strong><span>Comparte tu enlace, configura personal, servicios y horarios.</span></div></div>
+<p class="privacy">Fase piloto: no incluye pagos, envío automático de WhatsApp ni recordatorios. Antes de ofrecerlo al público, debe configurarse el correo transaccional y la protección adicional contra reservas automatizadas.</p>
+<div class="buttons"><a href="../" class="btn">Acceso al panel</a></div>
+</aside>
+</div>
+</div>
+<footer>Barber &amp; Beauty <strong>PRO</strong> · ARPRobots LLC · Puerto Rico</footer>
+</div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.84.0/dist/umd/supabase.min.js"></script>
+<script>
+(function(){
+'use strict';
+var PROJECT_URL='https://aypbqxtbavpqzrbimpvu.supabase.co';
+var PUBLISHABLE_KEY='sb_publishable_tT6n1wAhP2X_keBx3AsNwQ_xYqfc1K6';
+var AUTH_REDIRECT='https://bbpro.arprobots.com/registro/';
+var db=window.supabase&&window.supabase.createClient?window.supabase.createClient(PROJECT_URL,PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}}):null;
+var busy=false, members=[], selectedBusiness=null, authenticatedUser=null, nameManuallyEditedSlug=false;
+var pfx=location.pathname.indexOf('/arprobots-assets/')===0?'/arprobots-assets/':'/';
+function byId(x){return document.getElementById(x);}
+function show(id){['loadingSection','accountSection','loginSection','confirmSection','businessSection','readySection'].forEach(function(x){byId(x).hidden=x!==id;});}
+function notice(msg,type){var e=byId('notice');if(!msg){e.hidden=true;e.textContent='';return;}e.hidden=false;e.textContent=msg;e.className='notice'+(type?' '+type:'');}
+function setStep(n){for(var k=1;k<=3;k++){var e=byId('step'+k);e.className='stepnav'+(k===n?' active':k<n?' done':'');}}
+function setBusy(on,btn){busy=on;document.querySelectorAll('button[type="submit"]').forEach(function(b){b.disabled=on;});if(btn){btn.disabled=on;}}
+function slugify(text){return String(text||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/&/g,' y ').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,48).replace(/-+$/g,'');}
+function bookingFor(slug){return location.origin+pfx+'cita/?negocio='+encodeURIComponent(slug);}
+function safeError(err){var t=String((err&&err.message)||err||'No se pudo completar la operación');
+ if(t.includes('duplicate key')||t.includes('unique constraint')||t.includes('bb_businesses_slug'))return 'Ese identificador ya está utilizado. Prueba otro nombre de enlace.';
+ if(t.toLowerCase().includes('email not confirmed'))return 'Confirma tu correo electrónico antes de entrar.';
+ if(t.toLowerCase().includes('rate limit')||t.includes('429'))return 'Demasiados intentos. Prueba más tarde.';
+ if(t.toLowerCase().includes('invalid login credentials'))return 'Correo o contraseña incorrectos.';
+ if(t.toLowerCase().includes('email address not authorized')||t.toLowerCase().includes('not authorized'))return 'El proveedor de correo de pruebas no autoriza ese destinatario. Es necesario configurar SMTP personalizado.';
+ if(t.toLowerCase().includes('user already registered'))return 'Ese correo ya tiene cuenta. Usa la opción Entrar.';
+ return t.slice(0,260);
+}
+function computePreview(){var slug=byId('businessSlug').value.trim();byId('urlPreview').textContent=/^[a-z0-9][a-z0-9-]{2,47}$/.test(slug)?bookingFor(slug):'El enlace aparecerá cuando el identificador sea válido (mínimo 3 caracteres).';}
+function displayReady(business){selectedBusiness=business;setStep(3);show('readySection');notice('Negocio registrado en Supabase. El enlace de reservas se generó automáticamente.','success');
+ byId('readyBusinessName').textContent=business.name;
+ var url=bookingFor(business.slug);
+ var link=byId('bookingUrl');link.href=url;link.textContent=url;
+ byId('openBooking').href=url;
+}
+function showBusiness(){
+ setStep(2);show('businessSection');
+ var list=byId('myBusinesses');list.replaceChildren();
+ if(members.length){
+  list.hidden=false;
+  var lead=document.createElement('p');lead.className='description';lead.textContent='Negocios asociados a esta cuenta. Puedes recuperar sus enlaces o crear otro:';list.appendChild(lead);
+  members.forEach(function(m){
+    var line=document.createElement('div');line.className='listitem';
+    var left=document.createElement('div');var nm=document.createElement('div');nm.className='name';nm.textContent=m.bb_businesses&&m.bb_businesses.name||'Negocio registrado';
+    var sm=document.createElement('div');sm.className='slug';sm.textContent=m.bb_businesses&&m.bb_businesses.slug||'Identificador no disponible';
+    left.append(nm,sm);
+    var btn=document.createElement('button');btn.type='button';btn.className='btn';btn.textContent='Ver enlace';
+    btn.addEventListener('click',function(){if(m.bb_businesses&&m.bb_businesses.slug){displayReady({name:m.bb_businesses.name,slug:m.bb_businesses.slug});}});
+    line.append(left,btn);list.appendChild(line);
+  });
+ }else list.hidden=true;
+ byId('businessName').focus();
+ computePreview();
+}
+async function fetchMemberships(){
+ var r=await db.from('bb_memberships').select('business_id,role,active,bb_businesses(name,slug)').eq('user_id',authenticatedUser.id).eq('active',true);
+ if(r.error)throw r.error;
+ members=(r.data||[]).filter(function(m){return m.role==='owner'||m.role==='manager';});
+}
+async function refreshAuth(){
+ if(!db){show('accountSection');notice('No se pudo cargar Supabase. Actualiza la página para intentarlo de nuevo.','error');return;}
+ try{
+   var g=await db.auth.getUser();
+   if(g.error||!g.data||!g.data.user){authenticatedUser=null;setStep(1);show('accountSection');return;}
+   authenticatedUser=g.data.user;await fetchMemberships();showBusiness();
+ }catch(err){show('accountSection');notice(safeError(err),'error');}
+}
+async function signup(e){
+ e.preventDefault();if(busy)return;
+ var f=new FormData(e.target),email=String(f.get('email')||'').trim(),password=String(f.get('password')||'');
+ if(password.length<8){notice('La contraseña requiere al menos 8 caracteres.','error');return;}
+ setBusy(true,byId('signupButton'));notice('');
+ try{
+   var r=await db.auth.signUp({email:email,password:password,options:{emailRedirectTo:AUTH_REDIRECT}});
+   if(r.error)throw r.error;
+   if(r.data&&r.data.session){await refreshAuth();}else{show('confirmSection');setStep(1);notice('Cuenta solicitada. Confirma el email y regresa para continuar.','success');}
+ }catch(err){notice(safeError(err),'error');}finally{setBusy(false,byId('signupButton'));}
+}
+async function login(e){
+ e.preventDefault();if(busy)return;
+ var f=new FormData(e.target);setBusy(true,byId('loginButton'));notice('');
+ try{
+  var r=await db.auth.signInWithPassword({email:String(f.get('email')||''),password:String(f.get('password')||'')});
+  if(r.error)throw r.error;await refreshAuth();
+ }catch(err){notice(safeError(err),'error');}finally{setBusy(false,byId('loginButton'));}
+}
+async function createBusiness(e){
+ e.preventDefault();if(busy||!authenticatedUser)return;
+ var f=new FormData(e.target);
+ var name=String(f.get('name')||'').trim(),slug=String(f.get('slug')||'').trim();
+ if(name.length<2||name.length>120||!/^[a-z0-9][a-z0-9-]{2,47}$/.test(slug)){notice('Verifica el nombre y el identificador del enlace.','error');return;}
+ setBusy(true,byId('businessButton'));notice('');
+ try{
+  var r=await db.rpc('bb_create_business',{p_name:name,p_slug:slug});
+  if(r.error)throw r.error;
+  var businessId=r.data;
+  if(!businessId)throw Error('Supabase no confirmó la creación del negocio.');
+  var detail=await db.from('bb_businesses').select('name,slug').eq('id',businessId).single();
+  if(detail.error||!detail.data){displayReady({name:name,slug:slug});notice('Negocio creado. Comprueba el enlace en el panel si tarda en aparecer.','success');}
+  else displayReady(detail.data);
+  try{await fetchMemberships();}catch(e){/* El enlace ya fue generado; la lista se actualizará al entrar nuevamente. */}
+ }catch(err){notice(safeError(err),'error');}finally{setBusy(false,byId('businessButton'));}
+}
+byId('signupForm').addEventListener('submit',signup);
+byId('loginForm').addEventListener('submit',login);
+byId('businessForm').addEventListener('submit',createBusiness);
+byId('businessName').addEventListener('input',function(){if(!nameManuallyEditedSlug){byId('businessSlug').value=slugify(this.value);computePreview();}});
+byId('businessSlug').addEventListener('input',function(){nameManuallyEditedSlug=true;this.value=this.value.toLowerCase().replace(/[^a-z0-9-]/g,'').slice(0,48);computePreview();});
+byId('showLogin').addEventListener('click',function(){show('loginSection');notice('');});
+byId('showSignup').addEventListener('click',function(){show('accountSection');notice('');});
+byId('confirmToLogin').addEventListener('click',function(){show('loginSection');notice('');});
+byId('checkConfirmation').addEventListener('click',function(){show('loadingSection');notice('');refreshAuth();});
+byId('signOut').addEventListener('click',async function(){if(db)await db.auth.signOut();authenticatedUser=null;members=[];setStep(1);show('loginSection');notice('Sesión cerrada.');});
+byId('anotherBusiness').addEventListener('click',function(){notice('');showBusiness();});
+byId('copyUrl').addEventListener('click',async function(){
+ if(!selectedBusiness)return;var url=bookingFor(selectedBusiness.slug);
+ try{await navigator.clipboard.writeText(url);notice('Enlace copiado. Puedes compartirlo por WhatsApp, Instagram o Facebook.','success');}
+ catch(e){var r=window.prompt('Copia este enlace',url);if(r!==null)notice('El enlace está listo para copiar.');}
+});
+var params=new URLSearchParams(location.hash.replace(/^#/,''));
+if(params.get('error_description')){notice(decodeURIComponent(params.get('error_description')),'error');}
+refreshAuth();
+})();
+</script>
+</body>
+</html>
