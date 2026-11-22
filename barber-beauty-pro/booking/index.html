@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0d0e11">
+<title>Reservar cita · Barber &amp; Beauty Pro</title>
+<style>
+:root{color-scheme:dark;--gold:#e7c879;--gold2:#a47832;--red:#dc172c;--base:#090a0c;--surface:#17191c;--line:#353638;--muted:#b6b7b9}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -10%,#4a341b44,transparent 43%),linear-gradient(150deg,#090909,#131416 56%,#0a0b0e);color:#f5f1ea;font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}header{border-bottom:1px solid #7256287b;background:#090a0bcc;padding:15px max(22px,calc((100vw - 1040px)/2));display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.05em}.mark{width:50px;height:50px;border:1px solid #ae812f;border-radius:14px;display:grid;place-items:center;font:italic 900 36px Georgia,serif;background:linear-gradient(140deg,#fff8d8,#d4a83b 49%,#775020);color:#1b1208;box-shadow:0 5px 15px #000, inset 0 1px #fff7}.brand small{display:block;font-size:9px;letter-spacing:.2em;color:var(--gold)}.header-note{font-size:12px;color:var(--gold);border:1px solid #745c2c;border-radius:30px;padding:8px 13px;white-space:nowrap}main{max-width:1020px;margin:auto;padding:40px 22px 70px}.eyebrow{color:var(--gold);letter-spacing:.2em;text-transform:uppercase;font-size:12px;font-weight:800}h1{font-size:clamp(32px,6vw,57px);line-height:1.08;margin:10px 0 10px;font-weight:900;letter-spacing:-.04em}h1 em{font-family:Georgia,serif;color:var(--gold);font-weight:600}p.sub{color:#b9b7b4;max-width:680px;margin:6px 0 28px}.layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(265px,1fr);gap:20px;align-items:start}.panel,.summary{background:linear-gradient(160deg,#242426d9,#111215f5);border:1px solid #544733;border-radius:20px;box-shadow:0 18px 55px #0007;overflow:hidden}.panel{padding:25px}.summary{padding:23px;position:sticky;top:20px}.step{display:flex;gap:13px;margin:0 0 17px;align-items:center}.num{width:34px;height:34px;border-radius:11px;border:1px solid #d4aa54;display:grid;place-items:center;color:#f4d487;background:#392c1b;font-weight:900}.step h2{font-size:17px;line-height:1.3;margin:0}.hint{color:#c1beb8;font-size:13px;margin:2px 0 16px}.divider{height:1px;background:#3d3e3f;margin:25px 0}.field{width:100%;height:49px;border:1px solid #606067;border-radius:12px;color:#f6f6f7;background:#121417;padding:0 15px;font:inherit;font-size:15px;outline:0}.field:focus{border-color:#ecce81;box-shadow:0 0 0 3px #d6ac4f20}.field::placeholder{color:#909398}label.label{display:block;font-size:13px;color:#e4dfd6;font-weight:750;margin-bottom:7px}.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}.choice{background:#16181b;border:1px solid #515154;border-radius:13px;padding:15px;text-align:left;color:inherit;cursor:pointer;min-height:96px;transition:border .15s,transform .15s}.choice strong{display:block;font-size:14px}.choice span{display:block;color:#bbb8b1;font-size:12px;margin-top:6px}.choice:hover{border-color:#caa454;transform:translateY(-1px)}.choice.selected{border-color:#ebca73;background:linear-gradient(135deg,#463620,#191816);box-shadow:inset 0 0 0 1px #9d7331}.choice:disabled{opacity:.5;cursor:not-allowed}.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.slot{border:1px solid #56565a;border-radius:11px;background:#151719;color:#f5f5f5;padding:13px 5px;cursor:pointer;font-weight:750}.slot:hover,.slot.selected{border-color:var(--gold);background:#44331a}.slot:disabled{opacity:.4}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.check{display:flex;gap:9px;align-items:flex-start;color:#c9c5be;font-size:12px;margin:17px 0}.check input{accent-color:#e6c070;margin-top:3px}.cta{width:100%;border:1px solid #f34a5b;border-radius:14px;color:white;background:linear-gradient(180deg,#f94b60 0%,#dc1028 48%,#85040f 100%);box-shadow:inset 0 2px 1px #ffa6ad88,0 6px 0 #55030c,0 13px 24px #bd122b33;padding:15px;cursor:pointer;font-weight:900;font-size:15px}.cta:hover{filter:brightness(1.1)}.cta:disabled{cursor:not-allowed;filter:grayscale(.8);opacity:.55;box-shadow:none}.sum-title{font-weight:900;font-size:17px;color:var(--gold);margin:0 0 20px}.row{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding:13px 0;border-bottom:1px solid #393b3d}.row span{color:#b7b7b7;font-size:13px}.row b{text-align:right;font-size:13px;max-width:61%}.total{color:var(--gold);font-size:25px;font-weight:900;margin-top:18px;text-align:right}.notice{border-radius:13px;padding:14px;margin:17px 0;line-height:1.45;font-size:13px;background:#26221b;border:1px solid #6a572f;color:#f1dbad}.notice.error{background:#411c20;border-color:#9a3642;color:#ffd3d5}.success{background:#153727;border-color:#398760;color:#d1ffe5}.fine{font-size:11px;color:#a7a4a0;line-height:1.65;margin-top:18px}.invisible{display:none!important}footer{text-align:center;padding:26px 10px;color:#999;border-top:1px solid #30291e;font-size:12px}footer strong{color:#d9bd78}button:focus-visible{outline:3px solid #e7c879;outline-offset:3px}@media(max-width:760px){.layout{grid-template-columns:1fr}.summary{position:static;order:-1}.panel{padding:18px}main{padding:28px 14px 45px}header{padding:12px 16px}.header-note{font-size:10px}.cards{grid-template-columns:1fr 1fr}.slots{grid-template-columns:repeat(3,1fr)}}@media(max-width:420px){.cards,.two{grid-template-columns:1fr}.mark{width:43px;height:43px}.brand{font-size:12px}.header-note{padding:6px 9px}.panel{padding:15px}}
+</style>
+</head>
+<body>
+<header><div class="brand"><div class="mark" aria-hidden="true">B</div><div>BARBER &amp; BEAUTY <span style="color:var(--gold)">PRO</span><small>ARPROBOTS · RESERVAS</small></div></div><span class="header-note">PILOTO · PRUEBAS</span></header>
+<main>
+<div class="eyebrow">Tu próxima cita empieza aquí</div>
+<h1 id="brandName">Reserva tu <em>momento</em></h1>
+<p class="sub">Selecciona un servicio, el profesional y la hora que prefieras. No necesitas crear una cuenta.</p><div class="notice" style="margin:0 0 22px">ETAPA DE PRUEBAS: este enlace registra solicitudes de cita pendientes. No compartir con clientes finales hasta cerrar las verificaciones y activar protección contra reservas abusivas.</div>
+<div class="layout">
+<div class="panel">
+<div class="step"><span class="num">1</span><h2>Escoge el servicio</h2></div>
+<div id="services" class="cards"><span class="hint">Cargando servicios...</span></div>
+<div class="divider"></div>
+<div class="step"><span class="num">2</span><h2>Selecciona el profesional</h2></div>
+<div id="staff" class="cards"><span class="hint">Primero selecciona un servicio.</span></div>
+<div class="divider"></div>
+<div class="step"><span class="num">3</span><h2>Fecha y horario</h2></div>
+<label class="label" for="date">Fecha de la cita</label>
+<input class="field" id="date" type="date" required><p class="hint">Horarios de Puerto Rico · Anticipación mínima: 30 minutos.</p>
+<div id="slots" class="slots"><span class="hint">Selecciona un servicio, profesional y fecha.</span></div>
+<div class="divider"></div>
+<div class="step"><span class="num">4</span><h2>Información de contacto</h2></div>
+<form id="bookForm">
+<div class="two">
+<div><label class="label" for="clientName">Nombre completo</label><input class="field" id="clientName" minlength="3" maxlength="120" autocomplete="name" placeholder="Tu nombre" required></div>
+<div><label class="label" for="phone">Teléfono de Puerto Rico</label><input class="field" id="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(787) 555-1234" required></div>
+</div>
+<label class="check"><input type="checkbox" id="consent" required><span>Autorizo a este negocio a utilizar mi nombre y teléfono para gestionar esta solicitud de cita. No se procesarán pagos en esta página.</span></label>
+<button class="cta" type="submit" id="bookButton">SOLICITAR MI CITA</button>
+<div id="message" class="notice invisible" role="status" aria-live="polite"></div>
+</form>
+</div>
+<aside class="summary"><div class="sum-title">RESUMEN DE TU CITA</div>
+<div class="row"><span>Negocio</span><b id="sumBusiness">—</b></div>
+<div class="row"><span>Servicio</span><b id="sumService">Sin seleccionar</b></div>
+<div class="row"><span>Profesional</span><b id="sumStaff">Sin seleccionar</b></div>
+<div class="row"><span>Fecha</span><b id="sumDate">Sin seleccionar</b></div>
+<div class="row"><span>Hora</span><b id="sumTime">Sin seleccionar</b></div>
+<div class="total" id="sumTotal">$0.00</div>
+<p class="fine">La cita se registra como <strong>pendiente</strong> hasta que el negocio la confirme. El importe mostrado es orientativo y no se ha cobrado. Si necesitas cancelar o cambiar tu solicitud, contacta directamente al negocio.</p>
+</aside>
+</div>
+</main>
+<footer>Powered by <strong>BARBER &amp; BEAUTY PRO</strong> · ARPRobots LLC · Puerto Rico</footer>
+<script>
+(function(){
+'use strict';
+var endpoint="https://aypbqxtbavpqzrbimpvu.supabase.co/functions/v1/bb-reservas";
+var params=new URLSearchParams(location.search);
+var slug=params.get('negocio')||'';
+var catalog=null, chosenService='', chosenStaff='', chosenMinute=null, waiting=false, confirmed=false;
+function el(id){return document.getElementById(id);}
+function formatMoney(c){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(c/100);}
+function hm(min){return String(Math.floor(min/60)).padStart(2,'0')+':'+String(min%60).padStart(2,'0');}
+function readable(min){var hour=Math.floor(min/60);return String((hour+11)%12+1)+':'+String(min%60).padStart(2,'0')+(hour<12?' AM':' PM');}
+function localToday(){var part=new Intl.DateTimeFormat('en-US',{timeZone:'America/Puerto_Rico',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());var find=function(k){return part.find(function(x){return x.type===k;}).value;};return find('year')+'-'+find('month')+'-'+find('day');}
+function daysAfter(d,n){var x=new Date(d+'T12:00:00Z');x.setUTCDate(x.getUTCDate()+n);return x.toISOString().slice(0,10);}
+function setMessage(message,bad,good){var box=el('message');box.textContent=message;box.className='notice'+(bad?' error':'')+(good?' success':'');box.scrollIntoView({behavior:'smooth',block:'nearest'});}
+function unsetMessage(){el('message').className='notice invisible';}
+function makeChoice(container,title,subtitle,selected,click){var b=document.createElement('button');b.type='button';b.className='choice'+(selected?' selected':'');var strong=document.createElement('strong');strong.textContent=title;var span=document.createElement('span');span.textContent=subtitle;b.append(strong,span);b.addEventListener('click',click);container.appendChild(b);}
+function selectedService(){return catalog&&catalog.services.find(function(s){return s.id===chosenService;});}
+function selectedStaff(){return catalog&&catalog.staff.find(function(s){return s.id===chosenStaff;});}
+function summary(){el('sumBusiness').textContent=catalog?catalog.business.name:'—';el('sumService').textContent=selectedService()?selectedService().name:'Sin seleccionar';el('sumStaff').textContent=selectedStaff()?selectedStaff().name:'Sin seleccionar';el('sumDate').textContent=el('date').value||'Sin seleccionar';el('sumTime').textContent=chosenMinute===null?'Sin seleccionar':readable(chosenMinute);el('sumTotal').textContent=formatMoney(selectedService()?selectedService().price_cents:0);}
+async function api(url,opts){var r=await fetch(endpoint+url,{cache:'no-store',headers:{'Content-Type':'application/json'},...(opts||{})});var data=await r.json();if(!r.ok)throw new Error(data.error||'No se pudo completar la operación');return data;}
+function renderServices(){var container=el('services');container.replaceChildren();if(!catalog.services.length){var p=document.createElement('p');p.className='hint';p.textContent='Este negocio aún no publicó servicios. Inténtalo más tarde.';container.appendChild(p);return;}catalog.services.forEach(function(s){makeChoice(container,s.name,s.duration_min+' min · '+formatMoney(s.price_cents),chosenService===s.id,function(){if(confirmed)return;chosenService=s.id;chosenStaff='';chosenMinute=null;renderServices();renderStaff();resetSlots();summary();unsetMessage();});});}
+function renderStaff(){var container=el('staff');container.replaceChildren();var staff=catalog.staff.filter(function(s){return catalog.mapping.some(function(m){return m.staff_id===s.id&&m.service_id===chosenService;});});if(!chosenService||!staff.length){var p=document.createElement('p');p.className='hint';p.textContent=chosenService?'No hay profesionales disponibles para este servicio.':'Primero selecciona un servicio.';container.appendChild(p);return;}staff.forEach(function(s){makeChoice(container,s.name,s.title,chosenStaff===s.id,function(){if(confirmed)return;chosenStaff=s.id;chosenMinute=null;renderStaff();loadSlots();summary();unsetMessage();});});}
+function resetSlots(){chosenMinute=null;var box=el('slots');box.replaceChildren();var p=document.createElement('p');p.className='hint';p.textContent='Selecciona el profesional y la fecha.';box.appendChild(p);}
+async function loadSlots(){chosenMinute=null;summary();var box=el('slots');box.replaceChildren();if(!chosenService||!chosenStaff||!el('date').value){resetSlots();return;}var p=document.createElement('p');p.className='hint';p.textContent='Consultando horarios reales...';box.appendChild(p);var expected=chosenService+'|'+chosenStaff+'|'+el('date').value;try{var data=await api('?api=slots&negocio='+encodeURIComponent(slug)+'&servicio='+encodeURIComponent(chosenService)+'&profesional='+encodeURIComponent(chosenStaff)+'&fecha='+encodeURIComponent(el('date').value));if(expected!==chosenService+'|'+chosenStaff+'|'+el('date').value)return;box.replaceChildren();if(!data.slots.length){p.textContent='No hay horarios disponibles para esa fecha.';box.appendChild(p);return;}data.slots.forEach(function(m){var b=document.createElement('button');b.className='slot';b.type='button';b.textContent=readable(m);b.addEventListener('click',function(){if(confirmed)return;chosenMinute=m;box.querySelectorAll('button').forEach(function(x){x.classList.remove('selected');});b.classList.add('selected');summary();unsetMessage();});box.appendChild(b);});}catch(e){box.replaceChildren();p.textContent=e.message;box.appendChild(p);}}
+el('date').addEventListener('change',function(){if(!confirmed)loadSlots();});
+el('bookForm').addEventListener('submit',async function(e){e.preventDefault();if(waiting||confirmed)return;if(!chosenService||!chosenStaff||chosenMinute===null||!el('date').value){setMessage('Selecciona servicio, profesional, fecha y horario.',true);return;}if(!el('consent').checked){setMessage('Debes autorizar el uso de tus datos para la reserva.',true);return;}waiting=true;el('bookButton').disabled=true;el('bookButton').textContent='PROCESANDO...';unsetMessage();try{var data=await api('?api=book',{method:'POST',body:JSON.stringify({negocio:slug,servicio:chosenService,profesional:chosenStaff,fecha:el('date').value,minuto:chosenMinute,nombre:el('clientName').value,telefono:el('phone').value})});confirmed=true;el('bookButton').textContent='SOLICITUD REGISTRADA';el('bookButton').disabled=true;setMessage('Solicitud registrada correctamente. Referencia: '+data.referencia+'. Estado: pendiente de confirmación por '+catalog.business.name+'.',false,true);}catch(err){setMessage(err.message,true);el('bookButton').disabled=false;el('bookButton').textContent='SOLICITAR MI CITA';loadSlots();}finally{waiting=false;}});
+async function init(){var d=localToday();el('date').min=d;el('date').max=daysAfter(d,21);var firstDate=daysAfter(d,1);if(new Date(firstDate+'T12:00:00Z').getUTCDay()===0)firstDate=daysAfter(firstDate,1);el('date').value=firstDate;if(!/^[a-z0-9][a-z0-9-]{2,47}$/.test(slug)){setMessage('Falta el identificador del negocio en el enlace.',true);return;}try{catalog=await api('?api=catalogo&negocio='+encodeURIComponent(slug));el('brandName').textContent=catalog.business.name;el('sumBusiness').textContent=catalog.business.name;document.title='Reserva en '+catalog.business.name+' · Barber & Beauty Pro';renderServices();renderStaff();resetSlots();summary();}catch(e){el('services').textContent='No es posible mostrar los servicios.';setMessage(e.message,true);}}
+init();
+})();
+</script>
+</body>
+</html>
