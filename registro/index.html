@@ -214,9 +214,17 @@ function showBusiness(){
  computePreview();
 }
 async function fetchMemberships(){
- var r=await db.from('bb_memberships').select('business_id,role,active,bb_businesses(name,slug)').eq('user_id',authenticatedUser.id).eq('active',true);
- if(r.error)throw r.error;
- members=(r.data||[]).filter(function(m){return m.role==='owner'||m.role==='manager';});
+ var privilege=await db.rpc('bb_is_platform_admin');
+ if(privilege.error)throw privilege.error;
+ if(privilege.data===true){
+  var all=await db.from('bb_businesses').select('id,name,slug').order('name');
+  if(all.error)throw all.error;
+  members=(all.data||[]).map(function(b){return {business_id:b.id,role:'platform_admin',active:true,bb_businesses:{name:b.name,slug:b.slug}};});
+ }else{
+  var r=await db.from('bb_memberships').select('business_id,role,active,bb_businesses(name,slug)').eq('user_id',authenticatedUser.id).eq('active',true);
+  if(r.error)throw r.error;
+  members=(r.data||[]).filter(function(m){return m.role==='owner'||m.role==='manager';});
+ }
 }
 async function refreshAuth(){
  if(!db){show('accountSection');notice('No se pudo cargar Supabase. Actualiza la página para intentarlo de nuevo.','error');return;}
