@@ -790,7 +790,7 @@ function authGate(message=''){
  const error=message?`<p class="form-error" style="display:block">${esc(message)}</p>`:'';
  showGate('Iniciar sesión',`${error}<form id="bbproLogin" class="form-grid"><label>Correo electrónico<input name="email" class="field" type="email" autocomplete="email" required></label><label>Contraseña<input name="password" class="field" type="password" autocomplete="current-password" required minlength="8"></label><div class="btnrow"><button class="btn btn-red" type="submit">Entrar</button><button class="btn btn-ghost" type="button" id="bbproRegister">Crear cuenta</button></div></form>`);
  $('#bbproLogin').addEventListener('submit',async e=>{e.preventDefault();const f=new FormData(e.target);try{const result=await DB.auth.signInWithPassword({email:String(f.get('email')),password:String(f.get('password'))});apiErr(result);await cloudReady();}catch(err){authGate(err.message);}});
- $('#bbproRegister').addEventListener('click',()=>registerGate());
+ $('#bbproRegister').addEventListener('click',()=>{window.location.assign((location.hostname.endsWith('.github.io')?'/arprobots-assets':'')+'/registro/');});
 }
 function registerGate(message=''){
  const error=message?`<p class="form-error" style="display:block">${esc(message)}</p>`:'';
