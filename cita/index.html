@@ -129,7 +129,7 @@ body{background:#0b0c0e;color:#fff;font-family:system-ui,-apple-system,BlinkMacS
 'use strict';
 var endpoint="https://aypbqxtbavpqzrbimpvu.supabase.co/functions/v1/bb-reservas";
 var params=new URLSearchParams(location.search);
-var slug=params.get('negocio')||'';
+var slug=params.get('negocio')||'mi-salon-pro';
 var catalog=null, chosenService='', chosenStaff='', chosenMinute=null, waiting=false, confirmed=false;
 function el(id){return document.getElementById(id);}
 function formatMoney(c){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(c/100);}
